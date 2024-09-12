@@ -49,7 +49,7 @@ public class Stove {
           hot = true;
           break;
       }
-      System.out.println("["+Burner.Setting.value+"]....."+temperatureState);
+      System.out.println("["+Burner.Temperature"]....."+temperatureState);
       if (hot) {
         System.out.println("RED LIGHT - HOT BURNER ALERT")
       }
