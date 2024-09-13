@@ -33,6 +33,18 @@ public class Stove {
 	 */
 	public void displayStove() {
     System.out.println("Beginning stove state");
+    displayMethod();
+    System.out.println("Stove after burners turned up");
+    displayMethod();
+    System.out.println("Stove after burners adjusted");
+    displayMethod();
+    System.out.println("Stove waiting for time to elapse");
+    displayMethod();
+    System.out.println("Stove in final state");
+    displayMethod();
+	}
+
+  private void displayMethod() {
     boolean hot = false;
     for (Burner burner : burners) {
       String temperatureState = "";
@@ -56,7 +68,7 @@ public class Stove {
         System.out.println("RED LIGHT - HOT BURNER ALERT");
       }
     }
-	}
+  }
 	
 	/**
 	 * Test various burner actions by turning them up
