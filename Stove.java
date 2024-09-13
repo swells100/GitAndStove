@@ -1,3 +1,5 @@
+package Stove;
+
 import java.util.ArrayList;
 
 /**
@@ -34,24 +36,24 @@ public class Stove {
     boolean hot = false;
     for (Burner burner : burners) {
       String temperatureState = "";
-      switch (burner.temperature) {
-        case "COLD":
+      switch (burner.myTemperature) {
+        case COLD:
           temperatureState = "cooool";
           break;
-        case "WARM":
+        case WARM:
           temperatureState = "warm";
           break;
-        case "HOT":
+        case HOT:
           temperatureState = "CAREFUL";
           break;
-        case "BLAZING":
+        case BLAZING:
           temperatureState = "VERY HOT! DON'T TOUCH";
           hot = true;
           break;
       }
-      System.out.println("["+Burner.Temperature"]....."+temperatureState);
+      System.out.println("[" + burner.mySetting.toString() + "]....." + temperatureState);
       if (hot) {
-        System.out.println("RED LIGHT - HOT BURNER ALERT")
+        System.out.println("RED LIGHT - HOT BURNER ALERT");
       }
     }
 	}
