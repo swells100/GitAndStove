@@ -32,43 +32,16 @@ public class Stove {
 	 **** You must write the following method ****
 	 */
 	public void displayStove() {
-    System.out.println("Beginning stove state");
-    displayMethod();
-    System.out.println("Stove after burners turned up");
-    displayMethod();
-    System.out.println("Stove after burners adjusted");
-    displayMethod();
-    System.out.println("Stove waiting for time to elapse");
-    displayMethod();
-    System.out.println("Stove in final state");
-    displayMethod();
-	}
-
-  private void displayMethod() {
     boolean hot = false;
     for (Burner burner : burners) {
-      String temperatureState = "";
-      switch (burner.myTemperature) {
-        case COLD:
-          temperatureState = "cooool";
-          break;
-        case WARM:
-          temperatureState = "warm";
-          break;
-        case HOT:
-          temperatureState = "CAREFUL";
-          break;
-        case BLAZING:
-          temperatureState = "VERY HOT! DON'T TOUCH";
-          hot = true;
-          break;
-      }
-      System.out.println("[" + burner.mySetting.toString() + "]....." + temperatureState);
-      if (hot) {
-        System.out.println("RED LIGHT - HOT BURNER ALERT");
-      }
+      burner.toString();
+      if (burner.myTemperature == BLAZING)
+        hot = true;
     }
-  }
+
+    if (hot)
+      System.out.println("RED LIGHT - HOT BURNER ALERT");
+	}
 	
 	/**
 	 * Test various burner actions by turning them up
