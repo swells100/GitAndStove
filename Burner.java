@@ -18,12 +18,15 @@ public class Burner {
 		switch(getMyTemperature()) {
 		  case COLD:
 		    myTemperature = Temperature.WARM;
+        mySetting = Setting.LOW;
 		    break;
 		  case WARM:
 		    myTemperature = Temperature.HOT;
+        mySetting = Setting.MEDIUM;
 		    break;
 		  case HOT:
 			myTemperature = Temperature.BLAZING;
+      mySetting = Setting.HIGH;
 		  default:
 			break;
 		}
@@ -33,12 +36,15 @@ public class Burner {
 		switch(getMyTemperature()) {
 		  case BLAZING:
 		    myTemperature = Temperature.HOT;
+        mySetting = Setting.MEDIUM;
 		    break;
 		  case HOT:
 		    myTemperature = Temperature.WARM;
+        mySetting = Setting.LOW;
 		    break;
 		  case COLD:
 			  myTemperature = Temperature.COLD;
+        mySetting = Setting.OFF;
 		  default:
 			break;
 		}
