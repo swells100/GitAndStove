@@ -5,10 +5,10 @@ public class Burner {
 	Temperature myTemperature;
 	Setting mySetting;
 	int timer;
-	public final int TIME_DURATION; 
+	public final int TIME_DURATION = 2;
 	public Burner() {
-		myTemperature = COLD;
-		mySetting = OFF;
+		myTemperature = Temperature.COLD;
+		mySetting = Setting.OFF;
 	}
 	public Temperature getMyTemperature() {
 		return myTemperature;
@@ -17,13 +17,13 @@ public class Burner {
 		timer = TIME_DURATION;
 		switch(getMyTemperature()) {
 		  case COLD:
-		    myTemperature = WARM;
+		    myTemperature = Temperature.WARM;
 		    break;
 		  case WARM:
-		    myTemperature = HOT:
+		    myTemperature = Temperature.HOT;
 		    break;
 		  case HOT:
-			myTemperature = BLAZING;
+			myTemperature = Temperature.BLAZING;
 		  default:
 			break;
 		}
@@ -32,22 +32,22 @@ public class Burner {
 		timer = TIME_DURATION;
 		switch(getMyTemperature()) {
 		  case BLAZING:
-		    myTemperature = HOT;
+		    myTemperature = Temperature.HOT;
 		    break;
 		  case HOT:
-		    myTemperature = WARM:
+		    myTemperature = Temperature.WARM;
 		    break;
 		  case COLD:
-			myTemperature = OFF;
+			  myTemperature = Temperature.COLD;
 		  default:
 			break;
 		}
 	}
-	public void updateTimer() {
+	public void updateTemperature() {
 		timer++;
 	}
 	public void display() {
-		System.out.println(Burner.toString());
+		System.out.println("[" + mySetting.toString() + "]....." + myTemperature);
 	}
 	
 }

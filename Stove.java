@@ -35,7 +35,7 @@ public class Stove {
     boolean hot = false;
     for (Burner burner : burners) {
       burner.toString();
-      if (burner.myTemperature == BLAZING)
+      if (burner.myTemperature == Burner.Temperature.BLAZING)
         hot = true;
     }
 
