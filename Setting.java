@@ -1,14 +1,14 @@
 package Stove;
 
-public enum Level {
+public enum Setting {
   OFF ("---"), LOW ("--+"), MEDIUM ("-++"), HIGH ("+++");
   private String value;
 
-  Level(String inVal) {
+  Setting(String inVal) {
     value = inVal;
   }
 
   public String toString() {
-    return value;
+    return this.value;
   }
 }
